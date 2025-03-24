@@ -1,9 +1,10 @@
 // app/page.js
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Trophy,
@@ -127,7 +128,7 @@ export default function Home() {
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-60 z-10" />
-          <img
+          <Image
             src="/api/placeholder/1920/1080"
             alt="Chess club background"
             className="w-full h-full object-cover"
@@ -277,7 +278,7 @@ export default function Home() {
               >
                 <Card className="overflow-hidden group">
                   <div className="relative overflow-hidden">
-                    <img
+                    <Image
                       src={member.image}
                       alt={member.name}
                       className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
