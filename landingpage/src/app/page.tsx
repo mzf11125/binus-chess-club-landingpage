@@ -127,7 +127,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-60 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-800 to-transparent opacity-60 z-10" />
           <Image
             src="/api/placeholder/1920/1080"
             alt="Chess club background"
@@ -148,7 +148,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
               Building community through the royal game since 2024
             </p>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg">
               BECOME A MEMBER
             </Button>
           </motion.div>
@@ -157,18 +157,18 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
-            className="absolute bottom-10 flex space-x-8 bg-black/50 p-4 rounded-lg"
+            className="absolute bottom-10 flex space-x-8 bg-green-900/50 p-4 rounded-lg"
           >
             <div className="flex flex-col items-center">
-              <Users size={36} className="text-blue-400" />
+              <Users size={36} className="text-green-400" />
               <p className="text-sm mt-2">150+ MEMBERS</p>
             </div>
             <div className="flex flex-col items-center">
-              <Trophy size={36} className="text-blue-400" />
+              <Trophy size={36} className="text-green-400" />
               <p className="text-sm mt-2">CITY CHAMPIONS</p>
             </div>
             <div className="flex flex-col items-center">
-              <Calendar size={36} className="text-blue-400" />
+              <Calendar size={36} className="text-green-400" />
               <p className="text-sm mt-2">WEEKLY EVENTS</p>
             </div>
           </motion.div>
@@ -182,7 +182,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               WELCOME TO OUR CLUB
             </h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8" />
+            <div className="w-24 h-1 bg-green-600 mx-auto mb-8" />
             <p className="text-gray-700 text-lg mb-10">
               The BINUS Chess Club is dedicated to promoting the game of chess
               in our community. We welcome players of all ages and skill levels,
@@ -198,8 +198,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="bg-white p-8 shadow-lg rounded-lg"
               >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users size={32} className="text-blue-600" />
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Users size={32} className="text-green-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Community
@@ -234,8 +234,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="bg-white p-8 shadow-lg rounded-lg"
               >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Trophy size={32} className="text-blue-600" />
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Trophy size={32} className="text-green-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Competition
@@ -285,7 +285,7 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70" />
                     <div className="absolute bottom-0 left-0 p-6">
-                      <p className="text-blue-300 mb-1">{member.role}</p>
+                      <p className="text-green-300 mb-1">{member.role}</p>
                       <h3 className="text-2xl font-bold text-white mb-2">
                         {member.name}
                       </h3>
@@ -311,9 +311,9 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 UPCOMING EVENTS
               </h2>
-              <div className="w-24 h-1 bg-blue-600 mb-6" />
+              <div className="w-24 h-1 bg-green-600 mb-6" />
             </div>
-            <Button className="bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+            <Button className="bg-transparent border border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
               VIEW CALENDAR <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -326,9 +326,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 shadow-lg rounded-lg border-t-4 border-blue-600"
+                className="bg-white p-8 shadow-lg rounded-lg border-t-4 border-green-600"
               >
-                <div className="text-blue-600 mb-2">{event.date}</div>
+                <div className="text-green-600 mb-2">{event.date}</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {event.event}
                 </h3>
@@ -339,7 +339,7 @@ export default function Home() {
                 <p className="text-gray-700 mb-6">{event.description}</p>
                 <Button
                   variant="outline"
-                  className="text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white"
+                  className="text-green-600 border-green-600 hover:bg-green-600 hover:text-white"
                 >
                   DETAILS
                 </Button>
@@ -403,7 +403,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   Individual
                 </h3>
-                <div className="text-4xl font-bold text-blue-600 mb-6">
+                <div className="text-4xl font-bold text-green-600 mb-6">
                   $60<span className="text-sm text-gray-500">/year</span>
                 </div>
                 <ul className="text-gray-700 mb-8 space-y-3">
@@ -412,7 +412,7 @@ export default function Home() {
                   <li>Monthly newsletter</li>
                   <li>USCF membership discount</li>
                 </ul>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">
+                <Button className="bg-green-600 hover:bg-green-700 text-white w-full">
                   JOIN NOW
                 </Button>
               </motion.div>
@@ -422,19 +422,19 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="bg-blue-600 p-8 rounded-lg text-center shadow-xl scale-105 transform"
+                className="bg-green-600 p-8 rounded-lg text-center shadow-xl scale-105 transform"
               >
                 <h3 className="text-2xl font-bold text-white mb-2">Family</h3>
                 <div className="text-4xl font-bold text-white mb-6">
-                  $100<span className="text-sm text-blue-200">/year</span>
+                  $100<span className="text-sm text-green-200">/year</span>
                 </div>
-                <ul className="text-blue-100 mb-8 space-y-3">
+                <ul className="text-green-100 mb-8 space-y-3">
                   <li>All individual benefits</li>
                   <li>Covers up to 4 family members</li>
                   <li>Youth program discount</li>
                   <li>Family tournament entry</li>
                 </ul>
-                <Button className="bg-white hover:bg-gray-100 text-blue-600 w-full">
+                <Button className="bg-white hover:bg-gray-100 text-green-600 w-full">
                   JOIN NOW
                 </Button>
               </motion.div>
@@ -468,7 +468,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-green-800">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -479,7 +479,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               VISIT US THIS WEEK
             </h2>
-            <p className="text-gray-300 max-w-3xl mx-auto mb-10">
+            <p className="text-green-100 max-w-3xl mx-auto mb-10">
               Drop by our club room for a friendly game or to learn more about
               becoming a member. New visitors are always welcome!
             </p>
@@ -487,7 +487,7 @@ export default function Home() {
               <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
                 FIND OUR LOCATION
               </Button>
-              <Button className="bg-transparent border border-white text-white hover:bg-white hover:text-gray-900 px-8 py-6 text-lg">
+              <Button className="bg-transparent border border-white text-white hover:bg-white hover:text-green-800 px-8 py-6 text-lg">
                 CONTACT US
               </Button>
             </div>
@@ -506,13 +506,13 @@ export default function Home() {
               <p className="text-gray-600 mt-2">© 2025 All Rights Reserved</p>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-600 hover:text-blue-600">
+              <a href="#" className="text-gray-600 hover:text-green-600">
                 About
               </a>
               <a href="#" className="text-gray-600 hover:text-blue-600">
                 Events
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600">
+              <a href="#" className="text-gray-600 hover:text-green-600">
                 Membership
               </a>
               <a href="#" className="text-gray-600 hover:text-blue-600">
