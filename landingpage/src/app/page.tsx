@@ -1,4 +1,3 @@
-// app/page.js
 "use client";
 
 import Image from "next/image";
@@ -13,6 +12,9 @@ import {
   Users,
   GraduationCap,
   MapPin,
+  Instagram,
+  Mail,
+  ArrowRight,
 } from "lucide-react";
 
 export default function Home() {
@@ -23,49 +25,55 @@ export default function Home() {
       id: 1,
       name: "Richard Thompson",
       role: "Club President",
-      image: "/api/placeholder/400/400",
+      image: "/board-members/richard-thompson.jpg",
       experience: "25+ years",
       rating: 1850,
+      bio: "A seasoned chess strategist with decades of competitive experience and a passion for mentoring young players.",
     },
     {
       id: 2,
       name: "Sarah Johnson",
       role: "Tournament Director",
-      image: "/api/placeholder/400/400",
+      image: "/board-members/sarah-johnson.jpg",
       experience: "15 years",
       rating: 1760,
+      bio: "Expert in tournament organization and player development, bringing precision and enthusiasm to competitive chess.",
     },
     {
       id: 3,
       name: "Michael Chen",
       role: "Head Coach",
-      image: "/api/placeholder/400/400",
+      image: "/board-members/michael-chen.jpg",
       experience: "20 years",
       rating: 2100,
+      bio: "International master with extensive coaching experience, specializing in advanced chess strategies and techniques.",
     },
     {
       id: 4,
       name: "Elena Rodriguez",
       role: "Youth Program Coordinator",
-      image: "/api/placeholder/400/400",
+      image: "/board-members/elena-rodriguez.jpg",
       experience: "12 years",
       rating: 1680,
+      bio: "Dedicated to inspiring young minds through chess, with a innovative approach to youth education and engagement.",
     },
     {
       id: 5,
       name: "James Wilson",
       role: "Secretary",
-      image: "/api/placeholder/400/400",
+      image: "/board-members/james-wilson.jpg",
       experience: "8 years",
       rating: 1550,
+      bio: "Organizational maestro ensuring smooth club operations and member communications.",
     },
     {
       id: 6,
       name: "Anita Patel",
       role: "Treasurer",
-      image: "/api/placeholder/400/400",
+      image: "/board-members/anita-patel.jpg",
       experience: "10 years",
       rating: 1620,
+      bio: "Financial expert maintaining the club's resources and supporting strategic growth initiatives.",
     },
   ];
 
@@ -122,16 +130,54 @@ export default function Home() {
     },
   ];
 
+  const membership = [
+    {
+      id: 1,
+      title: "Student Membership",
+      price: "50IDR/semester",
+      features: [
+        "Weekly club sessions",
+        "Access to coaching",
+        "Tournament discounts",
+        "Online resources",
+      ],
+    },
+    {
+      id: 2,
+      title: "Professional Membership",
+      price: "100IDR/year",
+      features: [
+        "All student benefits",
+        "Advanced training sessions",
+        "Priority tournament registration",
+        "Mentorship opportunities",
+      ],
+    },
+    {
+      id: 3,
+      title: "Junior Membership",
+      price: "30IDR/semester",
+      features: [
+        "Youth program access",
+        "Beginner coaching",
+        "Monthly workshops",
+        "Fun chess activities",
+      ],
+    },
+  ];
+
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-green-800 to-transparent opacity-60 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900 to-blue-900 opacity-60 z-10" />
           <Image
-            src="/api/placeholder/1920/1080"
+            src="/chess-club-background.jpg"
             alt="Chess club background"
             className="w-full h-full object-cover"
+            width={1920}
+            height={1080}
           />
         </div>
 
@@ -146,18 +192,31 @@ export default function Home() {
               BINUS CHESS CLUB
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Building community through the royal game since 2024
+              Empowering minds, one strategic move at a time
             </p>
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg">
-              BECOME A MEMBER
-            </Button>
+            <div className="flex space-x-4">
+              <a
+                href="https://instagram.com/binuschessclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full"
+              >
+                <Instagram className="mr-2" /> Follow Us
+              </a>
+              <a
+                href="mailto:binuschessclub@gmail.com"
+                className="flex items-center bg-transparent border border-white hover:bg-white hover:text-green-900 text-white px-6 py-3 rounded-full"
+              >
+                <Mail className="mr-2" /> Contact Us
+              </a>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
-            className="absolute bottom-10 flex space-x-8 bg-green-900/50 p-4 rounded-lg"
+            className="absolute bottom-10 flex space-x-8 bg-white/20 p-4 rounded-lg"
           >
             <div className="flex flex-col items-center">
               <Users size={36} className="text-green-400" />
@@ -175,77 +234,207 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Membership Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              WELCOME TO OUR CLUB
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-6">
+              MEMBERSHIP PLANS
             </h2>
-            <div className="w-24 h-1 bg-green-600 mx-auto mb-8" />
-            <p className="text-gray-700 text-lg mb-10">
-              The BINUS Chess Club is dedicated to promoting the game of chess
-              in our community. We welcome players of all ages and skill levels,
-              from beginners just learning the rules to experienced tournament
-              players. Our club provides a friendly and supportive environment
-              to play, learn, and grow your chess skills.
+            <div className="w-24 h-1 bg-[#005533] mx-auto mb-6" />
+            <p className="text-[#003366] max-w-3xl mx-auto text-lg">
+              Choose a membership that fits your chess journey. Whether you're a
+              beginner or an experienced player, we have a plan tailored to your
+              needs.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {membership.map((plan) => (
               <motion.div
+                key={plan.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 shadow-lg rounded-lg"
+                className="bg-[#E6F2E6] rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users size={32} className="text-green-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Community
+                <h3 className="text-2xl font-bold text-[#003366] mb-4">
+                  {plan.title}
                 </h3>
-                <p className="text-gray-600">
-                  Join our diverse community of chess enthusiasts from all walks
-                  of life and skill levels.
+                <p className="text-[#005533] text-3xl font-bold mb-6">
+                  {plan.price}
                 </p>
+                <ul className="space-y-3 mb-6">
+                  {plan.features.map((feature, index) => (
+                    <li
+                      key={`${plan.title}-feature-${index}`}
+                      className="flex items-center text-[#003366]"
+                    >
+                      <ArrowRight className="mr-2 text-[#005533]" size={16} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  variant="outline"
+                  className="w-full border-[#003366] text-[#003366] hover:bg-[#003366] hover:text-white"
+                >
+                  Join Now
+                </Button>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-[#E6F2E6]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-6">
+              CONTACT US
+            </h2>
+            <div className="w-24 h-1 bg-[#005533] mx-auto mb-6" />
+            <p className="text-[#003366] max-w-3xl mx-auto text-lg">
+              Have questions or want to join? Reach out to us and start your
+              chess journey today!
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+            <form className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-[#003366] mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full px-4 py-2 border border-[#005533] rounded-md focus:outline-none focus:ring-2 focus:ring-[#005533]"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-[#003366] mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full px-4 py-2 border border-[#005533] rounded-md focus:outline-none focus:ring-2 focus:ring-[#005533]"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-[#003366] mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  className="w-full px-4 py-2 border border-[#005533] rounded-md focus:outline-none focus:ring-2 focus:ring-[#005533]"
+                  placeholder="Your Message"
+                />
+              </div>
+              <Button
+                type="submit"
+                className="w-full bg-[#005533] hover:bg-[#003366] text-white"
+              >
+                Send Message
+              </Button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 bg-green-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+              ABOUT OUR CLUB
+            </h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
+            <p className="text-green-800 max-w-3xl mx-auto text-lg">
+              BINUS Chess Club is more than just a gathering of chess
+              enthusiasts. We are a community dedicated to promoting strategic
+              thinking, personal growth, and the beautiful complexity of chess.
+              Whether you're a beginner or an experienced player, our club
+              offers a supportive environment to learn, compete, and excel.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Events Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+              UPCOMING EVENTS
+            </h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {clubEvents.map((event) => (
               <motion.div
+                key={event.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 shadow-lg rounded-lg"
+                className="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow"
               >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <GraduationCap size={32} className="text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Education
+                <h3 className="text-2xl font-bold text-green-900 mb-4">
+                  {event.event}
                 </h3>
-                <p className="text-gray-600">
-                  Learn and improve your chess skills through our various
-                  classes and coaching programs.
-                </p>
+                <div className="flex items-center mb-2 text-green-700">
+                  <Calendar className="mr-2" size={20} />
+                  <span>{event.date}</span>
+                </div>
+                <div className="flex items-center mb-4 text-green-700">
+                  <MapPin className="mr-2" size={20} />
+                  <span>{event.location}</span>
+                </div>
+                <p className="text-green-800 mb-4">{event.description}</p>
+                <Button variant="outline" className="w-full">
+                  Learn More <ArrowRight className="ml-2" size={16} />
+                </Button>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Section */}
+      <section className="py-20 bg-green-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+              OUR PROGRAMS
+            </h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {clubPrograms.map((program) => (
               <motion.div
+                key={program.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 shadow-lg rounded-lg"
+                className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl transition-shadow"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Trophy size={32} className="text-green-600" />
+                <div className="mb-4 flex justify-center text-green-600">
+                  {program.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Competition
+                <h3 className="text-xl font-bold text-green-900 mb-3">
+                  {program.title}
                 </h3>
-                <p className="text-gray-600">
-                  Test your skills in our regular tournaments, ladder
-                  competitions, and team matches.
-                </p>
+                <p className="text-green-700">{program.description}</p>
               </motion.div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -254,13 +443,13 @@ export default function Home() {
       <section className="py-20 bg-white" id="team">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
               MEET OUR BOARD
             </h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
-            <p className="text-gray-700 max-w-3xl mx-auto">
-              Our dedicated board members work tirelessly to create a welcoming
-              environment and organize engaging events for all our members.
+            <p className="text-green-800 max-w-3xl mx-auto">
+              Our dedicated board members bring extensive experience and passion
+              to guide our club's mission.
             </p>
           </div>
 
@@ -282,8 +471,10 @@ export default function Home() {
                       src={member.image}
                       alt={member.name}
                       className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+                      width={400}
+                      height={400}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-green-900 to-transparent opacity-70" />
                     <div className="absolute bottom-0 left-0 p-6">
                       <p className="text-green-300 mb-1">{member.role}</p>
                       <h3 className="text-2xl font-bold text-white mb-2">
@@ -296,6 +487,9 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+                  <div className="p-4 bg-white">
+                    <p className="text-green-800">{member.bio}</p>
+                  </div>
                 </Card>
               </motion.div>
             ))}
@@ -303,220 +497,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                UPCOMING EVENTS
-              </h2>
-              <div className="w-24 h-1 bg-green-600 mb-6" />
-            </div>
-            <Button className="bg-transparent border border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
-              VIEW CALENDAR <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {clubEvents.map((event) => (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 shadow-lg rounded-lg border-t-4 border-green-600"
-              >
-                <div className="text-green-600 mb-2">{event.date}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {event.event}
-                </h3>
-                <p className="text-gray-500 mb-2">
-                  <MapPin size={18} className="inline mr-2" />
-                  {event.location}
-                </p>
-                <p className="text-gray-700 mb-6">{event.description}</p>
-                <Button
-                  variant="outline"
-                  className="text-green-600 border-green-600 hover:bg-green-600 hover:text-white"
-                >
-                  DETAILS
-                </Button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Programs Section */}
-      <section className="py-20 bg-blue-600">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-16 text-center">
-            OUR PROGRAMS
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {clubPrograms.map((program) => (
-              <motion.div
-                key={program.id}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="text-center bg-white/10 p-8 rounded-lg"
-              >
-                <div className="text-white mx-auto mb-4">{program.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-3">
-                  {program.title}
-                </h3>
-                <p className="text-blue-100">{program.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Membership Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                JOIN OUR CLUB
-              </h2>
-              <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
-              <p className="text-gray-700 max-w-3xl mx-auto">
-                Become a member today and enjoy all the benefits our chess club
-                has to offer.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-8 rounded-lg text-center"
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Individual
-                </h3>
-                <div className="text-4xl font-bold text-green-600 mb-6">
-                  $60<span className="text-sm text-gray-500">/year</span>
-                </div>
-                <ul className="text-gray-700 mb-8 space-y-3">
-                  <li>Weekly club nights</li>
-                  <li>Tournament eligibility</li>
-                  <li>Monthly newsletter</li>
-                  <li>USCF membership discount</li>
-                </ul>
-                <Button className="bg-green-600 hover:bg-green-700 text-white w-full">
-                  JOIN NOW
-                </Button>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-green-600 p-8 rounded-lg text-center shadow-xl scale-105 transform"
-              >
-                <h3 className="text-2xl font-bold text-white mb-2">Family</h3>
-                <div className="text-4xl font-bold text-white mb-6">
-                  $100<span className="text-sm text-green-200">/year</span>
-                </div>
-                <ul className="text-green-100 mb-8 space-y-3">
-                  <li>All individual benefits</li>
-                  <li>Covers up to 4 family members</li>
-                  <li>Youth program discount</li>
-                  <li>Family tournament entry</li>
-                </ul>
-                <Button className="bg-white hover:bg-gray-100 text-green-600 w-full">
-                  JOIN NOW
-                </Button>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-8 rounded-lg text-center"
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Student
-                </h3>
-                <div className="text-4xl font-bold text-blue-600 mb-6">
-                  $30<span className="text-sm text-gray-500">/year</span>
-                </div>
-                <ul className="text-gray-700 mb-8 space-y-3">
-                  <li>Weekly club nights</li>
-                  <li>Tournament eligibility</li>
-                  <li>Free coaching sessions</li>
-                  <li>School team support</li>
-                </ul>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">
-                  JOIN NOW
-                </Button>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 bg-green-800">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              VISIT US THIS WEEK
-            </h2>
-            <p className="text-green-100 max-w-3xl mx-auto mb-10">
-              Drop by our club room for a friendly game or to learn more about
-              becoming a member. New visitors are always welcome!
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
-                FIND OUR LOCATION
-              </Button>
-              <Button className="bg-transparent border border-white text-white hover:bg-white hover:text-green-800 px-8 py-6 text-lg">
-                CONTACT US
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="bg-gray-100 py-10">
+      <footer className="bg-green-50 py-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <h3 className="text-2xl font-bold text-gray-900">
+              <h3 className="text-2xl font-bold text-green-900">
                 BINUS CHESS CLUB
               </h3>
-              <p className="text-gray-600 mt-2">© 2025 All Rights Reserved</p>
+              <p className="text-green-600 mt-2">© 2025 All Rights Reserved</p>
             </div>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-600 hover:text-green-600">
-                About
+            <div className="flex space-x-6 items-center">
+              <a
+                href="https://instagram.com/binuschessclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-600 hover:text-blue-600 flex items-center"
+              >
+                <Instagram className="mr-2" /> Instagram
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600">
-                Events
-              </a>
-              <a href="#" className="text-gray-600 hover:text-green-600">
-                Membership
-              </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600">
-                Contact
+              <a
+                href="mailto:binuschessclub@gmail.com"
+                className="text-green-600 hover:text-blue-600 flex items-center"
+              >
+                <Mail className="mr-2" /> Email
               </a>
             </div>
           </div>
