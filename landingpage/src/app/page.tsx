@@ -7,7 +7,6 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Trophy,
-  ChevronRight,
   Calendar,
   Users,
   GraduationCap,
@@ -73,7 +72,7 @@ export default function Home() {
       image: "/board-members/anita-patel.jpg",
       experience: "10 years",
       rating: 1620,
-      bio: "Financial expert maintaining the club's resources and supporting strategic growth initiatives.",
+      bio: "Financial expert maintaining the club&quot;s resources and supporting strategic growth initiatives.",
     },
   ];
 
@@ -243,9 +242,9 @@ export default function Home() {
             </h2>
             <div className="w-24 h-1 bg-[#005533] mx-auto mb-6" />
             <p className="text-[#003366] max-w-3xl mx-auto text-lg">
-              Choose a membership that fits your chess journey. Whether you're a
-              beginner or an experienced player, we have a plan tailored to your
-              needs.
+              Choose a membership that fits your chess journey. Whether
+              you&quot;re a beginner or an experienced player, we have a plan
+              tailored to your needs.
             </p>
           </div>
 
@@ -360,7 +359,7 @@ export default function Home() {
               BINUS Chess Club is more than just a gathering of chess
               enthusiasts. We are a community dedicated to promoting strategic
               thinking, personal growth, and the beautiful complexity of chess.
-              Whether you're a beginner or an experienced player, our club
+              Whether you&quot;re a beginner or an experienced player, our club
               offers a supportive environment to learn, compete, and excel.
             </p>
           </div>
@@ -449,7 +448,7 @@ export default function Home() {
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
             <p className="text-green-800 max-w-3xl mx-auto">
               Our dedicated board members bring extensive experience and passion
-              to guide our club's mission.
+              to guide our club&quot;s mission.
             </p>
           </div>
 
