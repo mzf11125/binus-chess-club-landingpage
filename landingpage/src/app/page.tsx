@@ -11,9 +11,9 @@ import {
   Users,
   GraduationCap,
   MapPin,
-  Instagram,
   Mail,
   ArrowRight,
+  Instagram,
 } from "lucide-react";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
   const boardMembers = [
     {
       id: 1,
-      name: "Richard Thompson",
+      name: "Galvent Chwen",
       role: "Club President",
       image: "/board-members/richard-thompson.jpg",
       experience: "25+ years",
@@ -40,7 +40,7 @@ export default function Home() {
     },
     {
       id: 3,
-      name: "Michael Chen",
+      name: "Bakti Amirul Jabar",
       role: "Head Coach",
       image: "/board-members/michael-chen.jpg",
       experience: "20 years",
@@ -76,29 +76,31 @@ export default function Home() {
     },
   ];
 
-  const clubEvents = [
+  const pastEvents = [
     {
       id: 1,
-      event: "Weekly Club Night",
-      date: "Every Thursday, 6:30 PM",
-      location: "Main Club Room",
-      description: "Casual play and analysis for members of all levels",
+      event: "Winter Blitz Tournament",
+      date: "January 20, 2025",
+      location: "Downtown Chess Hall",
+      description: "Fast-paced blitz tournament for all skill levels."
     },
     {
       id: 2,
-      event: "Spring Tournament",
-      date: "April 15-16, 2025",
-      location: "Community Center",
-      description: "USCF-rated tournament open to all members",
+      event: "Holiday Chess Gala",
+      date: "December 15, 2024",
+      location: "City Banquet Hall",
+      description: "Annual celebration with friendly matches and awards."
     },
     {
       id: 3,
-      event: "Youth Chess Camp",
-      date: "June 10-14, 2025",
-      location: "Lincoln Elementary School",
-      description: "Summer chess program for kids ages 8-14",
-    },
+      event: "Autumn Open",
+      date: "October 10-11, 2024",
+      location: "Community Center",
+      description: "Open tournament with exciting prizes."
+    }
   ];
+
+  const clubEvents = [];
 
   const clubPrograms = [
     {
@@ -193,20 +195,20 @@ export default function Home() {
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
               Empowering minds, one strategic move at a time
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center space-x-4">
               <a
-                href="https://instagram.com/binuschessclub"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full"
+              href="https://instagram.com/binuschessclub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full"
               >
-                <Instagram className="mr-2" /> Follow Us
+              <Instagram className="mr-2" /> Follow Us
               </a>
               <a
-                href="mailto:binuschessclub@gmail.com"
-                className="flex items-center bg-transparent border border-white hover:bg-white hover:text-green-900 text-white px-6 py-3 rounded-full"
+              href="mailto:binuschessclub@gmail.com"
+              className="flex items-center bg-transparent border border-white hover:bg-white hover:text-green-900 text-white px-6 py-3 rounded-full"
               >
-                <Mail className="mr-2" /> Contact Us
+              <Mail className="mr-2" /> Contact Us
               </a>
             </div>
           </motion.div>
@@ -400,6 +402,43 @@ export default function Home() {
                 <Button variant="outline" className="w-full">
                   Learn More <ArrowRight className="ml-2" size={16} />
                 </Button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Past Events Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              PAST EVENTS
+            </h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-6" />
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {pastEvents.map((event) => (
+              <motion.div
+                key={event.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {event.event}
+                </h3>
+                <div className="flex items-center mb-2 text-gray-700">
+                  <Calendar className="mr-2" size={20} />
+                  <span>{event.date}</span>
+                </div>
+                <div className="flex items-center mb-4 text-gray-700">
+                  <MapPin className="mr-2" size={20} />
+                  <span>{event.location}</span>
+                </div>
+                <p className="text-gray-800 mb-4">{event.description}</p>
               </motion.div>
             ))}
           </div>
